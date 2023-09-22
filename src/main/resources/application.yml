@@ -1,0 +1,38 @@
+setting:
+  upload-path: "blog-images"
+server:
+  port: 8888
+  servlet:
+    session:
+      cookie:
+        same-site: strict # 严格限制cookie为同域
+spring:
+  profiles:
+    active: '@environment@'
+  application:
+    name: Zwanan-Blog
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  servlet:
+    # 文件上传配置
+    multipart:
+      enabled: true
+      max-file-size: 32MB
+      max-request-size: 128MB
+  mvc:
+    # 此前缀的请求将会由静态资源处理器处理
+    static-path-pattern: /static/**
+  web:
+    resources:
+      # 自带的静态资源处理器读取文件的位置
+      static-locations: file:${setting.upload-path}
+  jpa:
+    hibernate:
+      # 数据库的初始化模式
+      ddl-auto: update
+    open-in-view: true
+    # 在日志中打印 sql 信息
+    show-sql: false
