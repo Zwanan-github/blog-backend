@@ -73,6 +73,15 @@
                 <environment>dev</environment>
             </properties>
         </profile>
+        <profile>
+            <id>prod</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <environment>prod</environment>
+            </properties>
+        </profile>
     </profiles>
 
     <build>

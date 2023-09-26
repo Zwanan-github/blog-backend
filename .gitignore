@@ -5,8 +5,8 @@ target/
 !**/src/test/**/target/
 blog-images/
 Dockerfile
-/src/main/resources/application-dev.yml
-
+/src/main/resources/application-*.yml
+ca.*
 ### STS ###
 .apt_generated
 .classpath
